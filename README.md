@@ -30,25 +30,8 @@ PA1: LDR sensor using ADC for light intensity.
 PA8, PA7, PA10: LEDs for LDR, Ultrasonic, PIR sensors.
 PB10: LED controlled over Bluetooth commands.
 USART2 (PA2 - TX, PA3 - RX): Serial communication for external commands.
-Code Structure
-Initialization:
 
-init_gpio(): Sets GPIO modes for sensors, LEDs, and USART2.
-init_adc(): Configures ADC1 for reading LDR values.
-USART2_Init(): Initializes USART2 for 9600 baud serial communication.
-configure_pa6_interrupt(): Sets up an external interrupt for PA6.
-Interrupt Handler:
 
-EXTI9_5_IRQHandler(): Sets a start_system flag on PA6 interrupt, initiating the main sensor loop.
-Main Loop:
-
-Waits for start_system to be set.
-Reads sensor data and adjusts LEDs based on:
-PIR Sensor: Turns on PA10 LED.
-Ultrasonic Sensor: Sets PA7 LED based on echo response.
-LDR Sensor: Uses ADC to control PA8 LED based on threshold.
-USART Communication: Controls PB10 LED based on '1' or '0' command.
-Configuration in Keil 5
 Project Setup:
 
 Open Keil 5, create a new project, and select the STM32F4xx series as your device.
