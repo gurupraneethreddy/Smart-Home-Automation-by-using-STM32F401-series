@@ -56,8 +56,3 @@ Usage
 Connect the STM32 board with sensors and LEDs as per the schematic.
 Use PA6 to start the system. The microcontroller will read sensor inputs and control LEDs accordingly.
 Use USART to send '1' or '0' commands to control PB10 LED.
-
-
-
-
-[![Smart-Home-Automation-by-using-STM32F401-series](https://img.youtube.com/vi/YpoFAt6k4QQ)](https://www.youtube.com/watch?v=YpoFAt6k4QQ)
